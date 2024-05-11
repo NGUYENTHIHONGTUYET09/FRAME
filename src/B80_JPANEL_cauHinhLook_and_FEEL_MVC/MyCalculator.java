@@ -1,4 +1,4 @@
-package B80_JPANEL_cauHinhLook_and_FEEL;
+package B80_JPANEL_cauHinhLook_and_FEEL_MVC;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;

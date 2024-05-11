@@ -1,6 +1,5 @@
-package B79_thanhPhan_boCuc;
+package B79_thanhPhan_boCuc_MVC;
 
-import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.concurrent.Flow;
 
@@ -8,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import B70_rename_diChuyen_copy_file_tapTin.viduFile;
-import B78_JFrame.ViDu;
+import B78_JFrame_MVC.ViDu;
 
 /*
  * panel khung lớn chưa
@@ -38,22 +37,22 @@ import B78_JFrame.ViDu;
  *  tây - West(trái)
  *   giữa - Center (giữa)  
  * */
-public class ViDu_BorderLayout extends JFrame{ // kế thừa all những j cử jframe
-	public ViDu_BorderLayout() {
+public class ViDu1_FlowLayout extends JFrame{ // kế thừa all những j cử jframe
+	public ViDu1_FlowLayout() {
 		this.setTitle("ViDu_FlowLayout");
 		this.setSize(600,400);
 		this.setLocationRelativeTo(null);//  căn chỉnh cho cửa sổ nằm ở giữa màn hình
 		
 		//set layout
-		//FlowLayout button xếp theo đông tây nam bắc
-		BorderLayout borderLayout = new BorderLayout(); // có khoảng cách
-		BorderLayout borderLayout_2 = new BorderLayout(20,20);//ko có khoảng cách
-		 
+		//FlowLayout button xếp từ trái sang phải
+		FlowLayout flowLayout = new FlowLayout();
+		FlowLayout flowLayout_1 = new FlowLayout(FlowLayout.RIGHT);// nằm bên phải
+		FlowLayout flowLayout_2 = new FlowLayout(FlowLayout.CENTER,50,50);
 
 
 		//this.setLayout(flowLayout); // phải truyền biến vừa tạo vô
 		//this.setLayout(flowLayout_1); // phải truyền biến vừa tạo vô
-		this.setLayout(borderLayout_2); // phải truyền biến vừa tạo vô
+		this.setLayout(flowLayout_2); // phải truyền biến vừa tạo vô
 
 		
 		
@@ -61,15 +60,11 @@ public class ViDu_BorderLayout extends JFrame{ // kế thừa all những j cử
 		JButton jButton_1 = new JButton("1");
 		JButton jButton_2 = new JButton("2");
 		JButton jButton_3 = new JButton("3");
-		JButton jButton_4 = new JButton("4");
-		JButton jButton_5 = new JButton("5");
 		
 		// add các thành phần
-		this.add(jButton_1, borderLayout.NORTH);
-		this.add(jButton_2, borderLayout.SOUTH);
-		this.add(jButton_3, borderLayout.WEST); // phía tây
-		this.add(jButton_4, borderLayout.EAST);
-		this.add(jButton_5, borderLayout.CENTER);
+		this.add(jButton_1);
+		this.add(jButton_2);
+		this.add(jButton_3);
 
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,7 +73,7 @@ public class ViDu_BorderLayout extends JFrame{ // kế thừa all những j cử
 	
 	
 	public static void main(String[] args) {
-		new ViDu_BorderLayout();
+		new ViDu1_FlowLayout();
 	}
 
 }

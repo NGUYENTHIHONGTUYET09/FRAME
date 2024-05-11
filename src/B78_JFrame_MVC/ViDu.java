@@ -1,4 +1,4 @@
-package B78_JFrame;
+package B78_JFrame_MVC;
 
 import javax.swing.JFrame;
 // jframe : tạo ra cửa sổ 

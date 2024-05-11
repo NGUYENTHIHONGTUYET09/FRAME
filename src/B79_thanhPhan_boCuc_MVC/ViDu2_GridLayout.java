@@ -1,13 +1,14 @@
-package B79_thanhPhan_boCuc;
+package B79_thanhPhan_boCuc_MVC;
 
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.util.concurrent.Flow;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import B70_rename_diChuyen_copy_file_tapTin.viduFile;
-import B78_JFrame.ViDu;
+import B78_JFrame_MVC.ViDu;
 
 /*
  * panel khung lớn chưa
@@ -19,8 +20,6 @@ import B78_JFrame.ViDu;
  *  layout : bố trí các khu vực trong cửa sổ
  *  thêm 1 điều khiển vật chứa (panel)  add(Component c);
  * */
-
-
 
 /*
  * FlowLayout : các thành phần xếp thành 1 luồng liên tiếp
@@ -37,43 +36,45 @@ import B78_JFrame.ViDu;
  *  tây - West(trái)
  *   giữa - Center (giữa)  
  * */
-public class ViDu_FlowLayout extends JFrame{ // kế thừa all những j cử jframe
-	public ViDu_FlowLayout() {
-		this.setTitle("ViDu_FlowLayout");
-		this.setSize(600,400);
-		this.setLocationRelativeTo(null);//  căn chỉnh cho cửa sổ nằm ở giữa màn hình
+public class ViDu2_GridLayout extends JFrame { // kế thừa all những j cử jframe
+	public ViDu2_GridLayout() {
+		this.setTitle("ViDu_GridLayout");
+		this.setSize(600, 400);
+		this.setLocationRelativeTo(null);// căn chỉnh cho cửa sổ nằm ở giữa màn hình
+
+		// set layout
+		// GridLayout button có kích thước như nhau
+		GridLayout gridLayout = new GridLayout();
+		GridLayout gridLayout_1 = new GridLayout(4, 4);// 4 dòng 4 cột
+		GridLayout gridLayout_2 = new GridLayout(4, 4, 25, 25);// 4 dòng , 4 cột , khoảng cách 25
+
+		// this.setLayout(gridLayout); // phải truyền biến vừa tạo vô
+		// this.setLayout(gridLayout_1); // phải truyền biến vừa tạo vô
+		this.setLayout(gridLayout_2); // phải truyền biến vừa tạo vô
+
 		
-		//set layout
-		//FlowLayout button xếp từ trái sang phải
-		FlowLayout flowLayout = new FlowLayout();
-		FlowLayout flowLayout_1 = new FlowLayout(FlowLayout.RIGHT);// nằm bên phải
-		FlowLayout flowLayout_2 = new FlowLayout(FlowLayout.CENTER,50,50);
-
-
-		//this.setLayout(flowLayout); // phải truyền biến vừa tạo vô
-		//this.setLayout(flowLayout_1); // phải truyền biến vừa tạo vô
-		this.setLayout(flowLayout_2); // phải truyền biến vừa tạo vô
-
-		
+		// lặp
+		for(int i = 0; i<15; i++) {
+			JButton jButton = new JButton(i +"");
+			this.add(jButton);
+		}
 		
 		// tạo button
 		JButton jButton_1 = new JButton("1");
 		JButton jButton_2 = new JButton("2");
 		JButton jButton_3 = new JButton("3");
-		
+
 		// add các thành phần
 		this.add(jButton_1);
 		this.add(jButton_2);
 		this.add(jButton_3);
 
-
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}
-	
-	
+
 	public static void main(String[] args) {
-		new ViDu_FlowLayout();
+		new ViDu2_GridLayout();
 	}
 
 }
